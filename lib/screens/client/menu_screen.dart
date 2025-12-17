@@ -100,6 +100,19 @@ class _MenuScreenState extends State<MenuScreen> {
       appBar: AppBar(
         title: const Text('Menu'),
         actions: [
+          // Reclami
+          IconButton(
+            icon: const Icon(Icons.report_problem_outlined),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MyComplaintsScreen(),
+                ),
+              );
+            },
+            tooltip: 'I miei reclami',
+          ),
           // Notifiche con badge
           if (user != null)
             StreamBuilder<int>(

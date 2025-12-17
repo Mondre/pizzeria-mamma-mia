@@ -101,8 +101,9 @@ class _MenuScreenState extends State<MenuScreen> {
         title: const Text('Menu'),
         actions: [
           // Reclami
-          IconButton(
+          TextButton.icon(
             icon: const Icon(Icons.report_problem_outlined),
+            label: const Text('Fai un reclamo'),
             onPressed: () {
               Navigator.push(
                 context,
@@ -111,7 +112,9 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               );
             },
-            tooltip: 'I miei reclami',
+            style: TextButton.styleFrom(
+              foregroundColor: Colors.white,
+            ),
           ),
           // Notifiche con badge
           if (user != null)

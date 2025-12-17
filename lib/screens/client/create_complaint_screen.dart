@@ -162,7 +162,7 @@ class _CreateComplaintScreenState extends State<CreateComplaintScreen> {
                       ),
                       const SizedBox(height: 8),
                       Text('Data: ${widget.order.createdAt.toString().substring(0, 16)}'),
-                      Text('Totale: €${widget.order.total.toStringAsFixed(2)}'),
+                      Text('Totale: €${widget.order.totalAmount.toStringAsFixed(2)}'),
                     ],
                   ),
                 ),

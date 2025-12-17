@@ -169,8 +169,8 @@ class _OrderCard extends StatelessWidget {
                           ),
                     ),
                   ],
-                ),                // Pulsante reclamo per ordini completati
-                if (order.status == OrderStatus.completed) ...[
+                ),                // Pulsante reclamo per ordini consegnati
+                if (order.status == OrderStatus.delivered) ...[
                   const SizedBox(height: 16),
                   ElevatedButton.icon(
                     onPressed: () {

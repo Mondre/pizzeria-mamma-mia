@@ -1,0 +1,37 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "pizzeria-mamma-mia-30531",
+          "appId": "1:881569677214:android:1cc4961234ae32e766a08f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "pizzeria-mamma-mia-30531",
+          "configurations": {
+            "android": "1:881569677214:android:1cc4961234ae32e766a08f",
+            "web": "1:881569677214:web:0ca96f9c68c3240066a08f",
+            "windows": "1:881569677214:web:7cb98246d17c16eb66a08f"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

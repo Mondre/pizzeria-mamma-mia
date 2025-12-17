@@ -5,6 +5,7 @@ import '../../services/order_service.dart';
 import 'order_management_screen.dart';
 import 'menu_management_screen.dart';
 import 'menu_import_screen.dart';
+import 'complaints_management_screen.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -19,6 +20,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
   final List<Widget> _screens = const [
     OrderManagementScreen(),
     MenuManagementScreen(),
+    ComplaintsManagementScreen(),
   ];
 
   @override
@@ -99,6 +101,11 @@ class _AdminDashboardState extends State<AdminDashboard> {
             icon: Icon(Icons.restaurant_menu),
             selectedIcon: Icon(Icons.restaurant_menu),
             label: 'Menu',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.report_problem),
+            selectedIcon: Icon(Icons.report_problem),
+            label: 'Reclami',
           ),
         ],
       ),

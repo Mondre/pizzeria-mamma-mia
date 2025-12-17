@@ -12,6 +12,7 @@ import 'orders_screen.dart';
 import 'create_pizza_screen.dart';
 import 'pizza_customization_dialog.dart';
 import 'notifications_screen.dart';
+import 'my_complaints_screen.dart';
 import '../legal/privacy_policy_screen.dart';
 import '../legal/terms_conditions_screen.dart';
 
@@ -46,8 +47,8 @@ class _MenuScreenState extends State<MenuScreen> {
           ScaffoldMessenger.of(context).clearSnackBars();
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Row(
-                children: const [
+              content: const Row(
+                children: [
                   Icon(Icons.notifications_active, color: Colors.white),
                   SizedBox(width: 12),
                   Expanded(
@@ -212,6 +213,16 @@ class _MenuScreenState extends State<MenuScreen> {
                 ),
               ),
               const PopupMenuItem(
+                value: 'complaints',
+                child: Row(
+                  children: [
+                    Icon(Icons.report_problem),
+                    SizedBox(width: 8),
+                    Text('I miei reclami'),
+                  ],
+                ),
+              ),
+              const PopupMenuItem(
                 value: 'profile',
                 child: Row(
                   children: [
@@ -277,6 +288,13 @@ class _MenuScreenState extends State<MenuScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const OrdersScreen(),
+                  ),
+                );
+              } else if (value == 'complaints') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MyComplaintsScreen(),
                   ),
                 );
               } else if (value == 'privacy') {

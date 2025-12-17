@@ -5,6 +5,7 @@ import '../../services/auth_service.dart';
 import '../../services/order_service.dart';
 import '../../models/order.dart';
 import '../../utils/constants.dart';
+import 'create_complaint_screen.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -168,8 +169,26 @@ class _OrderCard extends StatelessWidget {
                           ),
                     ),
                   ],
-                ),
-              ],
+                ),                // Pulsante reclamo per ordini completati
+                if (order.status == OrderStatus.completed) ...[
+                  const SizedBox(height: 16),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CreateComplaintScreen(order: order),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.report_problem),
+                    label: const Text('Invia Reclamo'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orange,
+                      foregroundColor: Colors.white,
+                    ),
+                  ),
+                ],              ],
             ),
           ),
         ],
